@@ -3,9 +3,13 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.example.miniwhere.Map.MapActivity;
 import com.example.miniwhere.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity  {
@@ -21,6 +25,9 @@ public class MainActivity extends AppCompatActivity  {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.hide();
 
+        binding.go.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, MapActivity.class));
+        });
         pressure.InitPressure();
         location.InitLocation();
     }

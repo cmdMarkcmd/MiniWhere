@@ -186,7 +186,7 @@
                 android:id="@+id/daohang"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:text="导 航"
+                android:text="定 位"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 >

@@ -13,7 +13,6 @@ public class Pressure {
     private MainActivity mainActivity;
     private SensorManager sensorManager = null;
     private Sensor mPressure;
-    private Sensor mAccelerate;
     private SensorEventListener pressureListener = new SensorEventListener() {
 
         @Override
@@ -55,6 +54,5 @@ public class Pressure {
         sensorManager = (SensorManager)mainActivity.getSystemService(Context.SENSOR_SERVICE);
         mPressure = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
         if(mPressure == null) return;
-        mAccelerate = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
 }
