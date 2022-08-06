@@ -15,14 +15,3 @@
 
     </com.tencent.tencentmap.mapsdk.maps.MapView>
 </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--    <TextView-->
-    <!--        android:layout_gravity="center"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:id="@+id/Angel"-->
-    <!--        android:textSize="30dp"-->
-    <!--        android:text="0.0"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        >-->
-
-    <!--    </TextView>-->

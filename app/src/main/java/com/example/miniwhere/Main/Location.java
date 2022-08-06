@@ -66,10 +66,13 @@ public class Location implements TencentLocationListener{
                 String stress = location.getStreet();
                 String qu = location.getDistrict();
                 String address = location.getAddress();
-
+                mainActivity.setCity(location.getCity());
+                mainActivity.setProvince(location.getProvince());
+                mainActivity.setCountry(qu);
                 mainActivity.setLat2Lon(lat+"°",lon+"°");
                 mainActivity.setLocation(address,qu+" "+stress);
             }
+            mainActivity.InitWeather();
 
         } else {
             // 定位失败
