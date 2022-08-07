@@ -3,23 +3,16 @@ package com.example.miniwhere.Main;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import net.sf.json.JSONObject;
 
-import java.net.SocketTimeoutException;
 import java.util.HashMap;
 import java.util.Map;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.Response;
 
 
@@ -37,7 +30,7 @@ public class Weather {
     public void requestData() {
 
 //        String textUrl = "http://www.weather.com.cn/data/cityinfo/" + "101200106" + ".html";
-        if (mainActivity.getProvince()=="null") return;
+        if (mainActivity.getProvince().equals("null")) return;
         String textUrl = "https://wis.qq.com/weather/common?source=pc&weather_type=observe|forecast_24h|alarm&";
         textUrl += "province="+mainActivity.getProvince();
         textUrl += "&city="+mainActivity.getCity();
@@ -76,8 +69,11 @@ public class Weather {
                             mainActivity.setWet("湿度",text);
                             text=(map2.get("weather") +"");
                             String textlong = "今日 ";
-                            textlong += map2.get("day");
-                            if (map2.get("day")!=map2.get("night")) textlong+="转"+map2.get("night");
+                            String night = (String) map2.get("night");
+                            String day = (String) map2.get("day");
+                            assert day != null;
+                            if (!day.equals(night)) textlong+=day+"转"+night;
+                            else textlong +=day;
                             textlong+="  "+map2.get("max")+"°/"+map2.get("min")+"°";
                             mainActivity.setWeather(text,textlong);
                             Log.d("Wea","获取成功");
