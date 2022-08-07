@@ -64,7 +64,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/Time"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:textSize="19dp"
+                    android:textSize="17dp"
                     android:text="2022年07月17日 周日"
                     >
                 </TextView>
